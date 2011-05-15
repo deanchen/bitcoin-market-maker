@@ -13,22 +13,24 @@ class TradeApi(object):
     '''
     
     def __init__(self):
-        '''
-        Constructor
-        '''
-
-    if __name__ == '__main__':
         '''API URL: https://mtgox.com/support/tradeAPI'''
-        TICKER_URL = 'https://mtgox.com/code/data/ticker.php'
-        DEPTH_URL = 'http://mtgox.com/code/data/getDepth.php'
-        TRADES_URL = 'http://mtgox.com/code/data/getTrades.php'
+        self.TICKER_URL = 'https://mtgox.com/code/data/ticker.php'
+        self.DEPTH_URL = 'http://mtgox.com/code/data/getDepth.php'
+        self.TRADES_URL = 'http://mtgox.com/code/data/getTrades.php'
         
-        tickerJson = urllib.request.urlopen(TICKER_URL).read().decode()
-        print(json.loads(tickerJson))
+    def getTicker(self):
+        tickerJson = urllib.request.urlopen(self.TICKER_URL).read().decode()
+        return json.loads(tickerJson)
         
-        depthJson = urllib.request.urlopen(DEPTH_URL).read().decode()
-        print(json.loads(depthJson))
+    
+    def getDepth(self):
+        depthJson = urllib.request.urlopen(self.DEPTH_URL).read().decode()
+        return json.loads(depthJson)
+    
+    def getTrades(self):
+        tradesJson = urllib.request.urlopen(self.TRADES_URL).read().decode()
+        return json.loads(tradesJson)
+       
         
-        tradesJson = urllib.request.urlopen(TRADES_URL).read().decode()
-        print(json.loads(tradesJson))
+        
         
