@@ -23,12 +23,12 @@ class TradeApi(object):
         DEPTH_URL = 'http://mtgox.com/code/data/getDepth.php'
         TRADES_URL = 'http://mtgox.com/code/data/getTrades.php'
         
-        tickerJson = urllib.request.urlopen(TICKER_URL).read().decode();
-        print(json.loads(tickerJson));
+        tickerJson = urllib.request.urlopen(TICKER_URL).read().decode()
+        print(json.loads(tickerJson))
         
-        depthJson = urllib.request.urlopen(DEPTH_URL).read().decode();
-        print(json.loads(depthJson));
+        depthJson = urllib.request.urlopen(DEPTH_URL).read().decode()
+        print(json.loads(depthJson))
         
-        tradesJson = urllib.request.urlopen(TRADES_URL).read().decode();
-        print(json.loads(tradesJson));
+        tradesJson = urllib.request.urlopen(TRADES_URL).read().decode()
+        print(json.loads(tradesJson))
         
